@@ -1,0 +1,31 @@
+table:
+  name: store_products
+  schema: public
+object_relationships:
+  - name: product
+    using:
+      foreign_key_constraint_on: product_id
+  - name: store
+    using:
+      foreign_key_constraint_on: store_id
+array_relationships:
+  - name: store_product_prices_histories
+    using:
+      foreign_key_constraint_on:
+        column: store_product_id
+        table:
+          name: store_product_prices_history
+          schema: public
+event_triggers:
+  - name: price_change
+    definition:
+      enable_manual: false
+      update:
+        columns:
+          - price
+          - price_date
+    retry_conf:
+      interval_sec: 10
+      num_retries: 10
+      timeout_sec: 60
+    webhook: '{{NHOST_FUNCTIONS_URL}}/price_change'

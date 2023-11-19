@@ -1,0 +1,25 @@
+table:
+  name: stores
+  schema: public
+object_relationships:
+  - name: chain
+    using:
+      foreign_key_constraint_on: chain_id
+  - name: sub_chain
+    using:
+      foreign_key_constraint_on: sub_chain_id
+array_relationships:
+  - name: promotions
+    using:
+      foreign_key_constraint_on:
+        column: store_id
+        table:
+          name: promotions
+          schema: public
+  - name: store_products
+    using:
+      foreign_key_constraint_on:
+        column: store_id
+        table:
+          name: store_products
+          schema: public

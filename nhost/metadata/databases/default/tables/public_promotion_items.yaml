@@ -1,0 +1,7 @@
+table:
+  name: promotion_items
+  schema: public
+object_relationships:
+  - name: promotion
+    using:
+      foreign_key_constraint_on: PromotionId

@@ -1,0 +1,18 @@
+table:
+  name: chains
+  schema: public
+array_relationships:
+  - name: stores
+    using:
+      foreign_key_constraint_on:
+        column: chain_id
+        table:
+          name: stores
+          schema: public
+  - name: sub_chains
+    using:
+      foreign_key_constraint_on:
+        column: chain_id
+        table:
+          name: sub_chains
+          schema: public

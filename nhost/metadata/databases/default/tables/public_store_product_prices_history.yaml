@@ -1,0 +1,7 @@
+table:
+  name: store_product_prices_history
+  schema: public
+object_relationships:
+  - name: store_product
+    using:
+      foreign_key_constraint_on: store_product_id

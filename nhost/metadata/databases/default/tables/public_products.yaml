@@ -1,0 +1,32 @@
+table:
+  name: products
+  schema: public
+object_relationships:
+  - name: category
+    using:
+      foreign_key_constraint_on: category_id
+  - name: manufacturer
+    using:
+      foreign_key_constraint_on: manufacturer_id
+array_relationships:
+  - name: cart_items
+    using:
+      foreign_key_constraint_on:
+        column: product_id
+        table:
+          name: cart_items
+          schema: public
+  - name: images
+    using:
+      foreign_key_constraint_on:
+        column: product_id
+        table:
+          name: images
+          schema: public
+  - name: store_products
+    using:
+      foreign_key_constraint_on:
+        column: product_id
+        table:
+          name: store_products
+          schema: public
