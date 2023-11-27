@@ -23,3 +23,23 @@ array_relationships:
         table:
           name: store_products
           schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - chain_id
+        - last_update_date
+        - last_update_time
+        - sub_chain_name_hebrew
+        - bikoret_no
+        - id
+        - store_number
+        - store_type
+        - sub_chain_id
+        - SubChainId
+        - zip_code
+        - address
+        - city
+        - store_name
+      filter: {}
+    comment: ""

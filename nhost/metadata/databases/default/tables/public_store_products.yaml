@@ -16,6 +16,24 @@ array_relationships:
         table:
           name: store_product_prices_history
           schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - allow_discount
+        - is_weighted
+        - price_date
+        - price
+        - id
+        - product_id
+        - store_id
+        - unit_amount
+        - quantity_in_package
+        - item_status
+        - quantity_measure
+        - unit_of_measure
+      filter: {}
+    comment: ""
 event_triggers:
   - name: price_change
     definition:

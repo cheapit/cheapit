@@ -9,3 +9,13 @@ array_relationships:
         table:
           name: products
           schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - country_of_manufacture
+        - id
+        - manufacturer_code
+        - manufacturer_name
+      filter: {}
+    comment: ""

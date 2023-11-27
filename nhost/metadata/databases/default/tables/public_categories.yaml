@@ -20,3 +20,13 @@ array_relationships:
         table:
           name: products
           schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - name
+        - slug
+        - id
+        - parent_id
+      filter: {}
+    comment: ""

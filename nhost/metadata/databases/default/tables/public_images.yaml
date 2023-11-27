@@ -5,3 +5,13 @@ object_relationships:
   - name: product
     using:
       foreign_key_constraint_on: product_id
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - name
+        - src
+        - id
+        - product_id
+      filter: {}
+    comment: ""

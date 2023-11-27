@@ -30,3 +30,17 @@ array_relationships:
         table:
           name: store_products
           schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - item_code
+        - category_id
+        - id
+        - manufacturer_id
+        - internal_barcode
+        - item_name
+        - item_type
+        - manufacturer_item_description
+      filter: {}
+    comment: ""
