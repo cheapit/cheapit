@@ -2,6 +2,13 @@ table:
   name: chains
   schema: public
 array_relationships:
+  - name: chain_data_instructions
+    using:
+      foreign_key_constraint_on:
+        column: chain_id
+        table:
+          name: chain_data_instructions
+          schema: public
   - name: stores
     using:
       foreign_key_constraint_on:
