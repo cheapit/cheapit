@@ -10,6 +10,7 @@
 - "!include public_cart_items.yaml"
 - "!include public_carts.yaml"
 - "!include public_categories.yaml"
+- "!include public_chain_data_instructions.yaml"
 - "!include public_chains.yaml"
 - "!include public_images.yaml"
 - "!include public_manufacturers.yaml"
