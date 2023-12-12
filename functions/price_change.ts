@@ -16,10 +16,11 @@ export default async (req: Request, res: Response) => {
 
   try {
     // Check if the new price_date is more recent than the old price_date
+    console.log("Check if the new price_date is more recent than the old price_date:", (new Date(newData.price_date) > new Date(oldData.price_date)))
     if (new Date(newData.price_date) > new Date(oldData.price_date)) {
-      // Perform the insertion into the history table
-      const secret = "nhost-admin-secret"; // replace with your actual token
-      const graphqlEndpoint = "https://local.hasura.nhost.run/v1/graphql";
+
+      const secret =  process.env.NHOST_ADMIN_SECRET;
+      const graphqlEndpoint = process.env.NHOST_GRAPHQL_URL;
 
       const client = createGraphQLClient(graphqlEndpoint, secret);
       let history_res = await client.request(INSERT_HISTORY, {
