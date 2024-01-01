@@ -34,16 +34,3 @@ select_permissions:
         - unit_of_measure
       filter: {}
     comment: ""
-event_triggers:
-  - name: price_change
-    definition:
-      enable_manual: false
-      update:
-        columns:
-          - price
-          - price_date
-    retry_conf:
-      interval_sec: 10
-      num_retries: 10
-      timeout_sec: 60
-    webhook: '{{NHOST_FUNCTIONS_URL}}/price_change'
